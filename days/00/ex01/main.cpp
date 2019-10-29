@@ -1,15 +1,26 @@
 #include <iostream>
 #include "Person.class.hpp"
 
+void add_new ( Person *book ) {
+
+	static int i = 0;
+	if (i <= 7)
+		book[i].fill_info();
+	else
+		std::cout << "Sorry, I don't have memory anymore... bzzz...." << std::endl;
+	i++;
+
+}
 int main ( void ) {
 
 	Person *persons=new Person[8];
-	
 
-	persons[1].fill_info();
-
+	while (true)
+		add_new(persons);
+	add_new(persons);
+	persons[0].get_full_info();
 	persons[1].get_full_info();
-//	inst.get_first_name();
+
 	return 0;
 
 }
