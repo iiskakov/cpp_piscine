@@ -1,5 +1,8 @@
 #include <iostream>
 #include "Bureaucrat.hpp"
+#include "ShrubberyCreationForm.hpp"
+#include "RobotomyRequestForm.hpp"
+#include "PresidentialPardonForm.hpp"
 Bureaucrat::Bureaucrat(void)
 {
 	
@@ -51,4 +54,10 @@ void	Bureaucrat::upGrade()
 void	Bureaucrat::downGrade()
 {
     this->_grade += 1;
+}
+
+void Bureaucrat::executeForm(const Form &form)
+{
+    std::cout << _name << " executes " << form.getName() << std::endl;
+    form.execute(*this);
 }

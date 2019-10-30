@@ -2,12 +2,12 @@
 #include <iostream>
 #include <fstream>
 
-RobotomyRequestForm::RobotomyRequestForm() : Form("Shrubbery Creation Form", 72, 45)
+RobotomyRequestForm::RobotomyRequestForm() : Form("Robotomy Request Form", 72, 45)
 {
     _target = "default";
 }
 
-RobotomyRequestForm::RobotomyRequestForm(std::string target) : Form("Shrubbery Creation Form", 72, 45)
+RobotomyRequestForm::RobotomyRequestForm(std::string target) : Form("Robotomy Request Form", 72, 45)
 {
     _target = target;
 }
@@ -28,10 +28,11 @@ RobotomyRequestForm &	RobotomyRequestForm::operator=(RobotomyRequestForm const &
     return *this;
 }
 
-void	RobotomyRequestForm::execute(Bureaucrat & executor)
+void	RobotomyRequestForm::execute(Bureaucrat & executor) const
 {
+    srand(time(0));
     int chance;
-    std::cout << "BzzzZzzzzzzz" << std::endl;
+    std::cout << "*buzzing noises*" << std::endl;
     chance = rand() % 100;
     if (chance > 50)
         std::cout << _target << " was robotomized succesfully" << std::endl;

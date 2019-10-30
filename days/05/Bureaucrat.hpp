@@ -23,8 +23,10 @@ public:
 	int getGrade();
 	void upGrade();
 	void downGrade();
+	void executeForm(Form const & form);
 };
 
+// TODO: stream operator to print smt like <name>, bureaucrat grade <grade>
 std::ostream &operator << (std::ostream &output, Bureaucrat const &old);
 
 #endif

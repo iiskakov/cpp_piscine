@@ -12,13 +12,12 @@ class Form
         Form(std::string name, int gradets, int gradeex);
 		Form& operator=(const Form &rhs);
 		~Form(void);
-        std::string getName() const;
+        virtual std::string getName() const;
         void beSigned(Bureaucrat &cog);
         bool getSign(void) const;
         int getGradeNeeded() const;
         int getGradeNeededEx() const;
-        void execute(Bureaucrat & executor);
-
+        virtual void execute(Bureaucrat & executor) const;
 	private:
         std::string target;
         std::string _name;

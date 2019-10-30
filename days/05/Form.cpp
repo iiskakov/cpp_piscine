@@ -56,7 +56,7 @@ void Form::beSigned(Bureaucrat  &cog)
        this->_signature = true;
 }
 
-void Form::execute(Bureaucrat & executor)
+void Form::execute(Bureaucrat & executor) const
 {
-        this->beSigned(executor);
+    std::cout << "Formal bureaucracy form executed" << std::endl;
 }
